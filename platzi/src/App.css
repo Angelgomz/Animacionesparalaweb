@@ -1,0 +1,57 @@
+.App {
+  text-align: center;
+}
+
+/*.App-logo {
+  animation: logoplatzi;
+  height: 80px;
+}*/
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+/*@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+} */
+@keyframes logoplatzi{
+  0%{
+      opacity:0;
+  }
+  20%{
+    opacity:1;
+  }
+  40%{
+    opacity:1;
+  }
+  60%{
+    opacity:1;
+  }
+  80%{
+    opacity:1;
+  }
+
+  100%{
+    opacity:0;
+    transform:translateY(-10px);
+  }
+}
+.logoplatzi{
+  animation-name:logoplatzi;
+  animation-duration:4s;
+  animation-iteration-count:infinite;
+  animation-timing-function:linear;
+  height:80px;
+}

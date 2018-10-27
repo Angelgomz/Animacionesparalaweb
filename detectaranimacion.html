@@ -1,0 +1,92 @@
+<!DOCTYPE html>             
+<html lang="es">
+<head>
+  
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <title> Curso Animaciones </title>
+    <style>
+    .cuadrado{
+        width:200px;
+        height:200px;
+        background-color:mediumvioletred;
+        position:relative;
+        left:10%;
+        top:100px;
+        border-radius:50%;
+        animation-name:cuadrado,transiciones;
+        animation-duration:4s,4s;
+      animation-direction:alternate;
+        animation-timing-function:linear;
+        animation-iteration-count:infinite,2; 
+
+    }
+    .cuadrado:hover{
+        animation-play-state:paused;
+    }
+    @keyframes cuadrado{
+            0%{
+            left:calc(0% + 100px);
+            }
+            30%{
+            left:55%;
+            }
+            70%{
+            left:70%;
+            }
+            100%{
+                left:calc(100% - 200px);
+            }
+
+    }
+   
+    @keyframes transiciones{
+        0%{
+              
+        }
+        20%{
+            transform:translateY(200px);
+        }
+        50%{
+            transform:translateY(0px);
+        }
+        100% {
+
+    }
+    }
+    @keyframes nuevo{
+        from{
+            left:80%;
+        }
+        to{
+            left:calc(99%-200px);
+        }
+    }
+    
+    
+    
+    body{
+        width:100%;
+    }
+    </style>
+    
+</head>
+<body>      
+
+        <div class="cuadrado" id="cuadrado">
+        </div>
+        <script>
+            const $cuadrado=document.getElementById('cuadrado');
+            $cuadrado.addEventListener('animationend',(event)=>{
+                
+               if (event.animationName=='transiciones'){
+                   $cuadrado.style.animationName='nuevo';
+                  
+                   $cuadrado.style.animationDuration='4s';
+                   $cuadrado.style.animationIterationCount='infinite'; 
+               }              
+            });
+     
+            </script>
+</body>
+</html>

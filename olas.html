@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    
+    <style>
+        .contenedor{
+            width:100%;
+            height:400px;
+            background-color:#10B1C8;
+            
+            display:flex;
+            align-items:center;
+            justify-content:flex-start;
+            overflow:hidden;
+            position:relative;
+            top:0px;
+            margin-left:0px;
+        }
+        .ola{
+         
+            width:2427px;
+            height:300px;
+            position:absolute;
+            bottom:0px;
+            left:0px;
+            right:0px;
+            margin-left:-20px;
+            animation-name:mover;
+            animation-duration:10s;
+            animation-iteration-count:infinite;
+            animation-direction:alternate;
+            
+        }
+        .ola.a{
+            background-image:url('imagenes/waves.png');
+            background-repeat:no-repeat;
+            animation-delay:2s;
+            animation-name:moviendo;
+            animation-duration:1s;
+        }
+        .ola.b{
+            background-image:url('imagenes/waves.png');
+            background-repeat:no-repeat;
+            animation-delay:3s;
+          
+        }
+        .ola.c{
+            background-image:url('imagenes/waves.png');
+            background-repeat:no-repeat;
+            animation-delay:5s;
+         
+        }
+        .ola.d{
+            background-image:url('imagenes/waves.png');
+            background-repeat:no-repeat;
+            animation-delay:6s;
+        
+          
+        }
+        @keyframes moviendo{
+            from{
+               
+            transform:translateX(0px);
+            }
+            to{
+                transform:translateX(-20px);
+            }
+        }
+        @keyframes mover{
+            0%{
+            transform:translateY(10px);
+            }
+            20%{
+                transform:translateY(4px);
+            }
+            40%{
+                transform:translateY(30px);
+           
+            }
+            60% 
+            {
+                transform:translateY(15px);
+        
+            }
+            80% 
+            {
+                transform:translateY(60px); 
+            }
+            90% 
+            {
+                transform:translateY(80px);              
+            }
+            100%{
+                transform:translateY(50px);
+            }
+        }
+        body{
+            width:100%;
+            height:100%;
+            overflow-x:hidden;
+            margin:0px;
+        }
+    </style>
+</head>
+    <body>
+        <div class="contenedor">
+        <div class="ola">
+            <div class="ola a"></div>
+            <div class="ola b"></div>
+            <div class="ola c"></div>
+            <div class="ola d"></div>
+        </div>    
+        </div>
+</body>
+</html>

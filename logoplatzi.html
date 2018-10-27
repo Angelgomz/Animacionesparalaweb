@@ -1,0 +1,113 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>logo platzi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <style>
+        body{
+            width:100%;
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            overflow-x:hidden;
+            background-color:whitesmoke;
+        }
+        .logo{
+            width:60px;
+            height:40px;
+            position:relative;
+            animation-name:girar;
+            animation-duration:3.5s;
+            animation-iteration-count:infinite;
+            
+           
+        }
+        .logo:hover{
+            animation-play-state:paused;
+        }
+        .left {
+            width:40%;
+            height:38%;
+            
+            border-top:18px solid orangered;
+            border-left:18px solid orangered;
+            border-right:18px solid orangered;
+            border-bottom:none;
+            top:1px;
+            border-radius:18px 18px 0px 0px;
+            animation-name:animacion;
+            animation-duration:3.5s;
+            animation-iteration-count:infinite;
+            animation-direction: alternate-reverse;
+            animation-delay:2s;
+        }
+        .left:hover{
+            animation-play-state:paused;
+        }
+        .right{
+            width:100%;
+            height:100%;
+            border-bottom:18px solid orangered;
+            border-left:18px solid orangered;
+            border-right:18px solid orangered;
+            border-radius:0px 0px 18px 18px;
+            border-top:none;
+        }
+        @keyframes animacion{
+
+            0%{
+                width:100%;
+            
+            }
+           
+            
+            100%{
+                width:50%;
+            }
+        }
+        @keyframes girar{
+            0%{
+                transform:rotate(0deg) scale(0.2);
+                opacity:0;
+                
+            }
+            10%{
+                transform:rotate(0deg) scale(0.5);
+                opacity:1;
+                
+            }
+            40%{
+                transform:rotate(405deg) scale(1);
+                opacity:1;
+               
+            }
+            70%{
+                transform:rotate(405deg) scale(1);
+                opacity:1;
+              
+            }
+            100%{
+                transform:rotate(0deg) scale(0.4);
+                opacity:1;
+              
+            }
+        }
+    
+    </style>
+</head>
+<body>
+        <div class="logo">
+            <div class="left">
+
+            </div>
+            <div class="right">
+
+            </div>
+        </div>
+</body>
+</html>

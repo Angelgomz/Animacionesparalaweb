@@ -1,0 +1,232 @@
+<!DOCTYPE html>             
+<html lang="es">
+<head>  
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <title> Curso Animaciones </title>
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+     rel="stylesheet">
+     <style>
+                    .cuadrado{
+                    background-color:orangered;
+                    width:100px;
+                    height:100px;
+                    display:flex;
+                    align-items:center;
+                    animation-name:cuadrado;
+                    animation-duration:4s;
+                    animation-timing-function:linear;
+                    animation-iteration-count:infinite;
+                    animation-direction:alternate;
+                    position:relative;
+                    left:20%;
+                    }
+                    .cuadrado .ojo1{
+                    width:15px;
+                    height:15px;
+                    position:absolute;
+                    left:30px;
+                    border-radius:50%;
+                    background-color:white;
+                    display:flex;
+                    flex-wrap:wrap;
+                    }
+                    .cuadrado .ojo2{
+                    width:15px;
+                    height:15px;
+                    position:absolute;
+                    left:50px;
+                    border-radius:50%;
+                    background-color:white;
+                    display:flex;
+                    flex-wrap:wrap;
+                    }
+
+                    .cuadrado .ojo2 .ojito2{
+                        display:flex;
+                        background-color:black;
+                        width:15px;
+                        height:5px;
+                        position:absolute;
+                        border-radius:50%;
+                    animation-name:pestaneo;
+                    animation-duration:1s;
+                    animation-iteration-count:2;
+                    }
+                    .cuadrado .ojo1 .ojito1{
+                        display:flex;
+                        background-color:black;
+                        width:15px;
+                        height:5px;
+                    position:absolute;
+                     border-radius:50%;
+                    animation-name:pestaneo;
+                    animation-duration:1s;
+                    animation-iteration-count:2;
+                    }
+                    @keyframes pestaneo{
+                    20%
+                    {
+                        height:5px;
+                    }
+                    40%{
+                        height:12px;
+                    }
+                    60%{
+                        height:16px;
+                    }
+                    100%
+                    {
+                        height:20px;
+                    }  
+                    }
+                   
+                    @keyframes nuevo{
+                    0%{
+                    width:10px;
+                    height:10px;
+                    bottom:10px;
+                    right:5px;
+                    }
+                    100%{
+                    width:10px;
+                    height:10px;
+                    bottom:0px;
+                    right:0px;
+                    }
+                    }
+                   .planeta{
+                     width:400px;
+                     height:400px;
+                       background-color:#0B6FA5;
+                    position:relative;
+                    left:30%;
+                    margin-top:20px;
+                    border-radius:50%;
+                   }
+                   
+                   body{
+                       width:99%;
+                       overflow-x:hidden;
+                    
+                   }
+                .btn{
+                    width:50px;
+                    height:50px;
+                    border-radius:10%;
+                    margin-left:40px;
+                    background: rgba(203,96,179,1);
+                    background: -moz-linear-gradient(left, rgba(203,96,179,1) 0%, rgba(168,0,119,1) 51%, rgba(219,54,164,1) 100%);
+                    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(203,96,179,1)), color-stop(51%, rgba(168,0,119,1)), color-stop(100%, rgba(219,54,164,1)));
+                    background: -webkit-linear-gradient(left, rgba(203,96,179,1) 0%, rgba(168,0,119,1) 51%, rgba(219,54,164,1) 100%);
+                    background: -o-linear-gradient(left, rgba(203,96,179,1) 0%, rgba(168,0,119,1) 51%, rgba(219,54,164,1) 100%);
+                    background:-ms-linear-gradient(left, rgba(203,96,179,1) 0%, rgba(168,0,119,1) 51%, rgba(219,54,164,1) 100%);
+                    background: linear-gradient(to right, rgba(203,96,179,1) 0%, rgba(168,0,119,1) 51%, rgba(219,54,164,1) 100%);
+                    border-color:#CB60B3;
+                    color:whitesmoke;
+                    box-shadow:inset 0 -.2em rgba(0, 0, 0, .2);
+                    cursor:pointer;
+                    will-change:transform;
+                }
+                .btn:active{
+                    transform:scale(0.7);
+                }
+                .botones{ 
+                    position:relative;
+                    left:30%;
+                    top:50px;
+                    
+                   
+                }
+
+     </style>
+  </head>
+  <body>
+      <div class="cuadrado" id="cuadrado">
+          <div class="ojo1">
+            <div class="ojito1" id="ojo1">
+            </div>
+        </div>
+        <div class="ojo2">
+          <div class="ojito2" id="ojo2">
+          </div>
+        </div>
+    </div>
+        <div class="planeta" id="planeta">
+            
+         </div>
+        
+         <div class="botones">
+            <button class="btn" id="play">
+                <i class="material-icons">
+                    play_circle_filled
+                    </i>
+            </button>
+            
+            <button class="btn" id="pause">
+                <i class="material-icons">
+                    pause
+                    </i>
+            </button>
+            <button class="btn" id="stop">
+                <i class="material-icons">
+                    stop
+            </button>
+            <button class="btn" id="reverse"><i class="material-icons">
+                skip_previous
+                </i></button>
+         </div>
+        <script>  
+            var $cuadrado=document.getElementById("cuadrado");
+            var $ojo1=document.getElementById("ojo1");
+            var $ojo2=document.getElementById("ojo2");
+            $cuadrado.addEventListener('animationend',(event)=>{
+            console.log(event.animationName);
+            if (event.animationName==="pestaneo"){
+                $ojo1.style.animationName='nuevo';
+                $ojo1.style.animationDuration='2s';
+                $ojo1.style.animationIterationCount='infinite';
+                $ojo2.style.animationName='nuevo';
+                $ojo2.style.animationDuration='2s';
+                $ojo2.style.animationIterationCount='infinite';
+            }
+            });
+            const $planeta=document.getElementById('planeta');
+           const animation=$planeta.animate([
+            {
+              transform:'rotateY(0deg)' 
+              
+            },
+            {
+                transform:'rotateY(180deg)'
+            }
+            ],{
+                duration:4000,
+                delay:1000,
+                direction: 'alternate',
+                easing: 'linear',
+                iterations:'Infinity',
+                fill: 'forwards',
+                
+                // endDelay: 5000,
+            })
+            const $play=document.getElementById('play');
+            $play.addEventListener('click',(event)=>{
+                animation.play();
+            });
+            const $stop=document.getElementById('stop');
+            $stop.addEventListener('click',(event)=>{
+               animation.cancel();
+            });
+            const $pause=document.getElementById('pause');
+            $pause.addEventListener('click',(event)=>{
+                animation.pause();
+            });
+            const $reverse=document.getElementById('reverse');
+            $reverse.addEventListener('click',(event)=>{
+                animation.reverse();
+            });
+            
+    </script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Like de twitter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+</head>
+    <style> 
+    body{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        width:100%;
+        overflow-x:hidden;
+       
+    }
+    .like{
+        width:100px;
+        height:100px;
+        display:block;
+        cursor:pointer;
+        background-image:url('imagenes/corazon.png');
+       /* background-size:1450px 50px; */
+    }
+    .like.is-liked{
+        animation-name:like;
+        animation-duration:3s;
+        animation-timing-function:steps(28);
+        animation-fill-mode:forwards;
+    }
+    @keyframes like{
+        from{
+            background-position:0px 0px;
+        }
+        to{
+            background-position:right;
+        }
+    }
+   
+        </style>
+<body>
+        <div class="like" id="like">
+
+        </div>
+        
+       
+</body>
+                    <script> 
+                    const $like=document.getElementById('like');
+                    $like.addEventListener('click',(event)=>{
+                       $like.classList.toggle('is-liked'); 
+                          /*  $like.style.animationName='like';
+                            $like.style.animationDuration='3s';
+                            $like.style.animationTimingFunction='steps(28)';
+                            $like.style.animationFillMode='forwards'; */
+                     });
+                    </script>
+
+</html>
